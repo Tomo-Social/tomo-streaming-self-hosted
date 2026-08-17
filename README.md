@@ -70,7 +70,7 @@ curl http://localhost:8090/api/v1/stream-servers
 ```
 
 > [!NOTE]
-> Tomo Streaming is currently in developer preview. GHCR release images are not published yet; follow [Build images locally](#build-images-locally) and set the two image variables before running Compose.
+> Tomo Streaming is currently in developer preview. Version `0.1.0` images are published in GHCR; use [Build images locally](#build-images-locally) when developing a modified runtime.
 
 ## Configuration
 

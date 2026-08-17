@@ -1,10 +1,10 @@
 services:
   control-plane:
-    image: ${TOMO_STREAMING_CONTROL_PLANE_IMAGE:-ghcr.io/tomo-streaming/control-plane:latest}
+    image: ${TOMO_STREAMING_CONTROL_PLANE_IMAGE:-ghcr.io/tomo-social/tomo-streaming-control-plane:0.1.0}
     environment:
       PORT: 8090
       TOMO_STREAM_API_KEY: ${TOMO_STREAM_API_KEY:?set TOMO_STREAM_API_KEY}
-      AV_STREAM_SERVER_IMAGE: ${TOMO_AV_STREAM_SERVER_IMAGE:-ghcr.io/tomo-streaming/stream-server:latest}
+      AV_STREAM_SERVER_IMAGE: ${TOMO_AV_STREAM_SERVER_IMAGE:-ghcr.io/tomo-social/tomo-av-stream-server:0.1.0}
       STREAM_SERVER_SIGNALING_URL: ${STREAM_SERVER_SIGNALING_URL:-ws://localhost:8090/signaling}
       MAX_STREAM_SESSIONS: ${MAX_STREAM_SESSIONS:-4}
       TOMO_STREAM_INSTANCE_ID: ${TOMO_STREAM_INSTANCE_ID:-self-hosted}
