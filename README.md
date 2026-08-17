@@ -146,11 +146,18 @@ TOMO_AV_STREAM_SERVER_IMAGE=tomo-av-stream-server:local
 
 - [ ] Terminate TLS and expose signaling through `wss://`.
 - [ ] Keep the API key in a secret manager.
+- [ ] Pin control-plane and stream-server images to a release tag or immutable digest; do not use `latest` in production.
+- [ ] Rotate `TOMO_STREAM_API_KEY` on a documented schedule and after any suspected exposure.
 - [ ] Configure TURN and test from a mobile network.
+- [ ] Restrict inbound ports with a firewall; expose only the reverse proxy and required TURN ports.
 - [ ] Restrict access to the Docker socket and worker network.
 - [ ] Set CPU, memory and concurrent-session budgets for the host.
 - [ ] Use a unique `TOMO_STREAM_INSTANCE_ID` per control plane.
-- [ ] Monitor container exits, CPU, memory and session startup latency.
+- [ ] Monitor `/health`, container exits, CPU, memory, peer counts and session startup latency.
+- [ ] Forward structured logs to a central sink and configure alerts for repeated worker failures.
+- [ ] Load-test the configured `MAX_STREAM_SESSIONS` limit before inviting users.
+- [ ] Document a rollback procedure and keep the previous known-good image tags available.
+- [ ] Confirm camera, desktop and audio capture consent with every participant before publishing a room.
 - [ ] Back the control plane with shared leases before running multiple replicas.
 
 ## Ecosystem
