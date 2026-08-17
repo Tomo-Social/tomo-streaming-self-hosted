@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="300" viewBox="0 0 1100 300" role="img" aria-labelledby="title desc">
+  <title id="title">Tomo Streaming session lifecycle</title>
+  <desc id="desc">A session transitions from requested to running, connected and ended, with an isolated worker for each room.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#fff7ed"/><stop offset="1" stop-color="#f5f3ff"/></linearGradient><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10z" fill="#f97316"/></marker></defs>
+  <rect width="1100" height="300" rx="24" fill="url(#bg)"/>
+  <text x="48" y="52" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700" fill="#111827">Room lifecycle</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <g><rect x="48" y="112" width="170" height="76" rx="14" fill="#fff" stroke="#fed7aa" stroke-width="2"/><text x="72" y="143" font-size="14" font-weight="700" fill="#c2410c">REQUESTED</text><text x="72" y="168" font-size="13" fill="#6b7280">Validate config</text></g>
+    <g><rect x="300" y="112" width="170" height="76" rx="14" fill="#fff" stroke="#fdba74" stroke-width="2"/><text x="324" y="143" font-size="14" font-weight="700" fill="#c2410c">STARTING</text><text x="324" y="168" font-size="13" fill="#6b7280">Launch worker</text></g>
+    <g><rect x="552" y="112" width="170" height="76" rx="14" fill="#4f46e5"/><text x="576" y="143" font-size="14" font-weight="700" fill="#e0e7ff">RUNNING</text><text x="576" y="168" font-size="13" fill="#fff">Accept WebRTC peers</text></g>
+    <g><rect x="804" y="112" width="170" height="76" rx="14" fill="#111827"/><text x="828" y="143" font-size="14" font-weight="700" fill="#c7d2fe">ENDED</text><text x="828" y="168" font-size="13" fill="#d1d5db">Stop and clean up</text></g>
+  </g>
+  <path d="M220 150H292M472 150H544M724 150H796" stroke="#f97316" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="48" y="238" font-family="Inter,Arial,sans-serif" font-size="13" fill="#6b7280">The control plane owns state; the stream server owns media. Empty-room cleanup is configurable.</text>
+</svg>

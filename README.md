@@ -19,15 +19,13 @@ It does **not** deploy the Tomo social network, user accounts, a frontend or a d
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  API[Your backend] -->|REST + x-api-key| CP[Control Plane :8090]
-  Client[Browser / native client] <-->|WebRTC signaling| CP
-  CP -->|Docker API| Worker[Stream-server container]
-  Worker <-->|H.264 + Opus + Input| Client
-  Camera[/dev/video*] --> Worker
-  Desktop[X11 + PulseAudio] --> Worker
-```
+The control plane owns room state and worker orchestration. Each active room gets an isolated stream-server container for media capture, encoding and interactive input.
+
+![Tomo Streaming self-hosted architecture](docs/architecture.svg)
+
+![Tomo Streaming room lifecycle](docs/session-lifecycle.svg)
+
+For the complete API and deployment reference, see the [public documentation](https://tomo-streaming-docs.pages.dev).
 
 ## Requirements
 
@@ -71,6 +69,15 @@ curl http://localhost:8090/api/v1/stream-servers
 
 > [!NOTE]
 > Tomo Streaming is currently in developer preview. Version `0.1.0` images are published in GHCR; use [Build images locally](#build-images-locally) when developing a modified runtime.
+
+## Choose a deployment path
+
+| Path | Best for | Status |
+| --- | --- | --- |
+| **Self-hosted** | Teams that need control of media, data and infrastructure | Available now |
+| **Tomo Streaming Cloud** | Fast room creation without managing workers | Coming soon |
+
+The self-hosted runtime is independent from Tomo Social. You can embed it into an existing product through the [Streaming SDK](https://github.com/Tomo-Social/tomo-streaming-sdk) or build a custom client against the API.
 
 ## Configuration
 
