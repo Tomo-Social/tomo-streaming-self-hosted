@@ -9,7 +9,7 @@
 [![Self-hosted](https://img.shields.io/badge/model-self--hosted-22C55E)](#quick-start)
 [![License](https://img.shields.io/badge/license-PolyForm_Noncommercial-orange)](LICENSE.md)
 
-[Quick start](#quick-start) · [Public docs](https://docs.tomo.stream) · [Requirements](#requirements) · [Sources](#capture-sources) · [Production](#production-checklist)
+[Quick start](#quick-start) · [Public docs](https://tomo-streaming-docs.pages.dev) · [Requirements](#requirements) · [Sources](#capture-sources) · [Production](#production-checklist)
 
 </div>
 
