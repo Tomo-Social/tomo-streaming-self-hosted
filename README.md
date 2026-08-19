@@ -9,7 +9,7 @@
 [![Self-hosted](https://img.shields.io/badge/model-self--hosted-22C55E)](#quick-start)
 [![License](https://img.shields.io/badge/license-PolyForm_Noncommercial-orange)](LICENSE.md)
 
-[Quick start](#quick-start) · [Public docs](https://tomo-streaming-docs.pages.dev) · [Requirements](#requirements) · [Sources](#capture-sources) · [Production](#production-checklist)
+[Quick start](#quick-start) · [Public docs](https://tomo-docs.pages.dev) · [Requirements](#requirements) · [Sources](#capture-sources) · [Production](#production-checklist)
 
 </div>
 
@@ -25,7 +25,7 @@ The control plane owns room state and worker orchestration. Each active room get
 
 ![Tomo Streaming room lifecycle](docs/session-lifecycle.svg)
 
-For the complete API and deployment reference, see the [public documentation](https://tomo-streaming-docs.pages.dev).
+For the complete API and deployment reference, see the [public documentation](https://tomo-docs.pages.dev).
 
 ## Requirements
 
